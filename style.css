@@ -1,0 +1,47 @@
+* {
+  font-family: montserrat;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+}
+
+.allForm {
+  background-color: beige;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 80px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+}
+
+h1 {
+  margin: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+form {
+  display: flex;
+}
+
+.formNickname,
+.formPassword,
+.formEmail,
+.formPhone {
+  margin-bottom: 10px;
+}
+.btns {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  /* margin: auto; */
+}
+
+.btn {
+  margin: auto;
+  width: 150px;
+}
