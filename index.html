@@ -14,27 +14,37 @@
     <div class="allForm">
       <h1 class="signIn">Sign in</h1>
 
-      <form action="">
+      <form action="" id="registrationForm">
         <div class="form">
           <div class="formNickname">
-            <label for="name">Your nickname:</label>
-            <input type="text" name="name" value="Nickname" />
+            <label for="nickname">Your nickname:</label>
+            <input
+              type="text"
+              id="nickname"
+              name="name"
+              autocomplete="nickname"
+            />
           </div>
           <div class="formPassword">
-            <label for="name">Your password:</label>
-            <input type="password" name="name" value="Password" />
+            <label for="password">Your password:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              autocomplete="current-password"
+            />
           </div>
           <div class="formEmail">
-            <label for="name">Your email:</label>
-            <input type="email" name="name" value="Email" />
+            <label for="email">Your email:</label>
+            <input type="email" id="email" name="email" autocomplete="email" />
           </div>
           <div class="formPhone">
-            <label for="name">Your phone number:</label>
-            <input type="tel" name="name" value="phone number" />
+            <label for="phone">Your phone number:</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" />
           </div>
           <div class="btns">
-            <button class="btn">Sign in</button>
-            <button class="btn">Cancel</button>
+            <button type="submit" id="signInBtn" class="btn">Sign in</button>
+            <button type="button" id="cancelBtn" class="btn">Cancel</button>
           </div>
         </div>
       </form>

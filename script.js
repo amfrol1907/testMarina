@@ -1,30 +1,40 @@
+'use strict';
+
 document.addEventListener('DOMContentLoaded', () => {
-  // Получаем элементы формы и кнопки
-  const form = document.querySelector('form');
-  const signInButton = document.querySelector('.btns .btn:first-child'); // Кнопка "Sign in"
-  const cancelButton = document.querySelector('.btns .btn:last-child'); // Кнопка "Cancel"
+  const signInBtn = document.getElementById('signInBtn');
+  const cancelBtn = document.getElementById('cancelBtn');
+  const form = document.getElementById('registrationForm');
+  const inputs = document.querySelectorAll('#registrationForm input');
 
-  // Обработчик для кнопки "Sign in"
-  signInButton.addEventListener('click', (event) => {
-    event.preventDefault(); // Предотвращаем стандартное поведение кнопки
+  function areFieldsFilled() {
+    let allFilled = true;
 
-    // Получаем значения полей
-    const nickname = form.querySelector('input[type="text"]').value.trim();
-    const password = form.querySelector('input[type="password"]').value.trim();
-    const email = form.querySelector('input[type="email"]').value.trim();
-    const phone = form.querySelector('input[type="tel"]').value.trim();
+    inputs.forEach((input) => {
+      if (!input.value.trim()) {
+        input.classList.add('error');
+        allFilled = false;
+      } else {
+        input.classList.remove('error');
+      }
+    });
+    return allFilled;
+  }
 
-    // Проверяем, заполнены ли поля
-    if (nickname && password && email && phone) {
-      alert('Вы зарегистрировались');
+  signInBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (areFieldsFilled()) {
+      document.querySelector('.allForm').style.display = 'none';
+      alert('Регистрация прошла успешно!');
     } else {
-      alert('Пожалуйста, заполните все поля формы.');
+      alert('Заполните все поля, пожалуйста.');
     }
   });
 
-  // Обработчик для кнопки "Cancel"
-  cancelButton.addEventListener('click', (event) => {
-    event.preventDefault(); // Предотвращаем стандартное поведение кнопки
-    alert('Вы не зарегистрировались');
+  cancelBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const allFormContainer = document.querySelector('.allForm');
+    allFormContainer.style.display = 'none';
+    alert('Регистрация отменена');
   });
 });
